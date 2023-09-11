@@ -8,7 +8,7 @@ class ListUsersController {
         const since = sinceParam ? parseInt(sinceParam as string, 10) : undefined;
 
         if (!Number.isInteger(since) && since !== undefined) {
-            return response.status(400).json({ error: 'O parâmetro "since" deve ser um número inteiro válido.' });
+            return response.status(400).json({ error: 'The since parameter must be a number.' });
         };
 
         const listUsersUseCase = container.resolve(ListUsersUseCase);
